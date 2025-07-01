@@ -17,14 +17,14 @@ SwiftMeds is a smart web application that predicts the most suitable delivery ci
 ## 📁 Folder Structure
 
 SwiftMeds/
-├── app.py # Main Flask application
-├── model/
-│ └── city_pridiction.joblib # Trained ML model
-├── dataset/
-│ └── work_1.csv # Medicine data (name, price, uses)
-├── templates/
-│ └── index.html # HTML template for the frontend
-├── static/
+├── app.py # Main Flask application <br>
+├── model/<br>
+│ └── city_pridiction.joblib # Trained ML model<br>
+├── dataset/<br>
+│ └── work_1.csv # Medicine data (name, price, uses)<br>
+├── templates/<br>
+│ └── index.html # HTML template for the frontend<br>
+├── static/<br>
 │ └── style.css # Optional custom CSS styles
 
 ---
