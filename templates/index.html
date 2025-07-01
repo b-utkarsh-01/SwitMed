@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>City and Location Information</title>
+    <style>
+        /* CSS goes here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .result h2 {
+            color: #333;
+        }
+
+        .time-status {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #007bff;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .price {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #28a745;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .usage {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #dc3545;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Medicine Name and Location</h1>
+        <form action="/get_city_location" method="POST">
+            <label for="medicine_name">Medicine Name:</label>
+            <input type="text" id="medicine_name" name="medicine_name" placeholder="e.g., Paracetamol">
+
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if medicine_name %}
+            <div class="result">
+                <h2>Medicine Name: {{ medicine_name }}</h2>
+            </div>
+        {% endif %}
+
+        {% if location %}
+            <div class="result">
+                <h2>Location: {{ location }}</h2>
+            </div>
+        {% endif %}
+
+        {% if predicted_location %}
+            <div class="result">
+                <h2>Predicted Location: {{ predicted_location }}</h2>
+            </div>
+        {% endif %}
+
+        {% if time_status %}
+            <div class="time-status">
+                <p>Predicted Location Status: {{ time_status }}</p>
+            </div>
+        {% endif %}
+
+        {% if price %}
+            <div class="price">
+                <p>Price: {{ price }}</p>
+            </div>
+        {% endif %}
+
+        {% if usage %}
+            <div class="usage">
+                <p>Usage: {{ usage }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
