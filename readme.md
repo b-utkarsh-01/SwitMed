@@ -1,40 +1,38 @@
-# 🌾 DROUGHT PREDICTION APP
+# 🚀 SwiftMeds - Smart Medicine Delivery Prediction App
 
-A Machine Learning-based web application that predicts the likelihood of drought in a given region based on various climatic factors. Built using Python, Streamlit, and popular ML libraries.
-
----
-
-## 📌 Features
-
-- 🔍 Predict drought based on real-time input parameters
-- 📊 Interactive web interface using Streamlit
-- 💡 Trained machine learning model for classification
-- 📁 Upload and analyze custom datasets
-- 📈 Visualizations for better understanding
+SwiftMeds is a smart web application that predicts the most suitable delivery city/location for a given medicine. It also shows the estimated delivery time, price, and usage of the medicine using a trained machine learning model and a real dataset.
 
 ---
 
-## 🛠️ Tech Stack
+## 📦 Features
 
-- **Frontend:** Streamlit
-- **Backend:** Python, Pandas, NumPy, Scikit-learn
-- **Model:** Logistic Regression / Random Forest / SVM *(based on your implementation)*
-- **Deployment:** *(Add if deployed on Streamlit Cloud / Heroku etc.)*
+- ✅ Predict delivery location using ML
+- 💰 Get the price of the medicine
+- 📖 See medicine usage
+- 🕒 Estimate delivery time: *under 1 hour* or *more than a day*
+- 🌐 Clean, responsive web UI using HTML + CSS (optionally Tailwind)
 
 ---
 
-```bash
-pip install -r requirements.txt
-```
+## 📁 Folder Structure
+
+SwiftMeds/
+├── app.py # Main Flask application
+├── model/
+│ └── city_pridiction.joblib # Trained ML model
+├── dataset/
+│ └── work_1.csv # Medicine data (name, price, uses)
+├── templates/
+│ └── index.html # HTML template for the frontend
+├── static/
+│ └── style.css # Optional custom CSS styles
+
+---
+
+## ▶️ How to Run the Project
+
+### 1. Clone the Repository
 
 ```bash
-streamlit run app.py
-```
-
-## 🚀 How to Run Locally
-
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/b-utkarsh-01/DROUGHT-PREDICTION-APP.git
-cd DROUGHT-PREDICTION-APP
+git clone https://github.com/your-username/swiftmeds.git
+cd swiftmeds
